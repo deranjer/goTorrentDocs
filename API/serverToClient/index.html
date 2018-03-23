@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Server to Client Messages - goTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Server to Client Messages";
+    var mkdocs_page_input_path = "API\\serverToClient.md";
+    var mkdocs_page_url = "/API/serverToClient/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> goTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Roadmap/">Roadmap</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../downloading/">Downloading</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Installing</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../Install/installing/">General Info</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Install/linuxInstall/">Linux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Install/otherInstall/">Other</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Install/reverseproxy/">Reverse Proxy</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../api/">General API Information</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../clientToServer/">Client to Server Messages</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Server to Client Messages</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#tokenreturn">TokenReturn</a></li>
+    
+
+    <li class="toctree-l3"><a href="#torrentlist">torrentList</a></li>
+    
+
+    <li class="toctree-l3"><a href="#torrentfilelist">torrentFileList</a></li>
+    
+
+    <li class="toctree-l3"><a href="#torrentpeerlist">torrentPeerList</a></li>
+    
+
+    <li class="toctree-l3"><a href="#rsslist">rssList</a></li>
+    
+
+    <li class="toctree-l3"><a href="#rsstorrentlist">rssTorrentList</a></li>
+    
+
+    <li class="toctree-l3"><a href="#settingsfile">settingsFile</a></li>
+    
+
+    <li class="toctree-l3"><a href="#clientconnectsettings">clientConnectSettings</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">goTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+    
+    <li>Server to Client Messages</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="tokenreturn">TokenReturn</h2>
+<p><strong>MessageType</strong>: "TokenReturn"</p>
+<p><strong>TokenReturn</strong>: <em>string</em>   //Contains the JWT token for new clients, only returned once, not stored in server</p>
+<h2 id="torrentlist">torrentList</h2>
+<p><strong>MessageType</strong>: "torrentList"</p>
+<p><strong>total</strong>: <em>int</em> //Integer containing the total number of torrents in the server</p>
+<p><strong>data</strong>: <em>array</em> //Array containing individual torrent stats (torrentListArray)</p>
+<p>data Struct</p>
+<table>
+<thead>
+<tr>
+<th>data Array</th>
+<th>Data Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TorrentHashString</td>
+<td>string</td>
+<td>//Passed to client for displaying hash and is used to uniquly identify all torrents</td>
+</tr>
+<tr>
+<td>TorrentName</td>
+<td>string</td>
+<td>//String of the name of the torrent</td>
+</tr>
+<tr>
+<td>DownloadedSize</td>
+<td>string</td>
+<td>//how much the client has downloaded total</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>string</td>
+<td>//total size of the torrent</td>
+</tr>
+<tr>
+<td>DownloadSpeed</td>
+<td>string</td>
+<td>//the dl speed of the torrent</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>string</td>
+<td>//Whether the torrent is stopped, running, seeding etc</td>
+</tr>
+<tr>
+<td>PercentDone</td>
+<td>string</td>
+<td>//Passed to client to show percent done</td>
+</tr>
+<tr>
+<td>ActivePeers</td>
+<td>string</td>
+<td>//Active peers that uploading/downloading</td>
+</tr>
+<tr>
+<td>UploadSpeed</td>
+<td>string</td>
+<td>//passed to client to show Uploadspeed</td>
+</tr>
+<tr>
+<td>StoragePath</td>
+<td>string</td>
+<td>//Where the torrent Data will be stored after download</td>
+</tr>
+<tr>
+<td>DateAdded</td>
+<td>string</td>
+<td>//Passed to client (and stored in stormdb)</td>
+</tr>
+<tr>
+<td>ETA</td>
+<td>string</td>
+<td>//ETA for the torrent</td>
+</tr>
+<tr>
+<td>TorrentLabel</td>
+<td>string</td>
+<td>//user provided label for the torrent</td>
+</tr>
+<tr>
+<td>SourceType</td>
+<td>string</td>
+<td>//Stores whether the torrent came from a torrent file or a magnet link</td>
+</tr>
+<tr>
+<td>KnownSwarm</td>
+<td>[]torrent.Peer</td>
+<td>//array of peers</td>
+</tr>
+<tr>
+<td>UploadRatio</td>
+<td>string</td>
+<td>//what the download to upload ratio is for the torrent</td>
+</tr>
+<tr>
+<td>TotalUploadedSize</td>
+<td>string</td>
+<td>//Humanized version of TotalUploadedBytes to pass to the client</td>
+</tr>
+<tr>
+<td>TotalUploadedBytes</td>
+<td>int64</td>
+<td>//includes bytes that happened before reboot (from stormdb)</td>
+</tr>
+<tr>
+<td>NumberofFiles</td>
+<td>int</td>
+<td>//Number of files in the torrent</td>
+</tr>
+<tr>
+<td>NumberofPieces</td>
+<td>int</td>
+<td>//Total number of pieces in the torrent (Not currently used)</td>
+</tr>
+<tr>
+<td>MaxConnections</td>
+<td>int</td>
+<td>//Used to stop the torrent by limiting the max allowed connections</td>
+</tr>
+</tbody>
+</table>
+<h2 id="torrentfilelist">torrentFileList</h2>
+<p><strong>MessageType</strong>: "torrentFileList"</p>
+<p><strong>TotalFiles</strong>: <em>int</em> //Integer containing the total number of files in the torrent</p>
+<p><strong>FileList</strong>: <em>array</em> //TorrentFile Struct // Array containing individual torrent files</p>
+<table>
+<thead>
+<tr>
+<th>FileList array</th>
+<th>data type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TorrentHashString</td>
+<td>string</td>
+<td>//Used to tie the file to a torrent //TODO not sure if needed</td>
+</tr>
+<tr>
+<td>FileName</td>
+<td>string</td>
+<td>//The name of the file</td>
+</tr>
+<tr>
+<td>FilePath</td>
+<td>string</td>
+<td>//The relative filepath to the file</td>
+</tr>
+<tr>
+<td>FileSize</td>
+<td>string</td>
+<td>//Humanized file size display</td>
+</tr>
+<tr>
+<td>FilePercent</td>
+<td>string</td>
+<td>//String value of percent of individual file percent done</td>
+</tr>
+<tr>
+<td>FilePriority</td>
+<td>string</td>
+<td>//Currently "High", "Normal", or "Cancel"</td>
+</tr>
+</tbody>
+</table>
+<h2 id="torrentpeerlist">torrentPeerList</h2>
+<p><strong>MessageType</strong>: "torrentPeerList"</p>
+<p><strong>TotalPeers</strong>: <em>int</em> //Integer containing the total number of peers in the torrent</p>
+<p><strong>PeerList</strong>: <em>[]Peer</em> //Peer Struct // Array containing individual torrent files</p>
+<p>WARN: This will likely change in the future</p>
+<table>
+<thead>
+<tr>
+<th>Peer Struct</th>
+<th>data type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>[]byte</td>
+<td>//TODO, plan on converting this to strings before sending</td>
+</tr>
+<tr>
+<td>IP</td>
+<td>[]byte</td>
+<td></td>
+</tr>
+<tr>
+<td>Port</td>
+<td>int</td>
+<td>//Port the peer is running on</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>string</td>
+<td>//Will convert to a meaningful string at some point</td>
+</tr>
+<tr>
+<td>SupportsEncryption</td>
+<td>bool</td>
+<td>//Does the client support encyrption</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rsslist">rssList</h2>
+<p><strong>MessageType</strong>: "rssList"</p>
+<p><strong>TotalRSSFeeds</strong>: <em>int</em> //Integer containing the total number of RSS Feeds in the database</p>
+<p><strong>RSSFeeds</strong>: <em>[]RSSFeedsNames</em> //RSSFeedsNames Struct // Array containing RSS Feed "Name" and "URL"</p>
+<table>
+<thead>
+<tr>
+<th>RSSFeedsNames</th>
+<th>data type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RSSName</td>
+<td>string</td>
+<td>// Name is pulled from the RSS Name field</td>
+</tr>
+<tr>
+<td>RSSFeedURL</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="rsstorrentlist">rssTorrentList</h2>
+<p><strong>MessageType</strong>: "rssTorrentList"</p>
+<p><strong>URL</strong>: <em>string</em> //URL of the RSS feed </p>
+<p><strong>Name</strong>: <em>string</em> //Name of the RSS feed, as extracted from the feed</p>
+<p><strong>TotalTorrents</strong>: <em>int</em> //Integer containing the total number of torrents in the feed</p>
+<p><strong>Torrents</strong>: <em>[]SingleRSSTorrent</em> //SingleRSSTorrent Struct // Array containing RSS Feed "Name" and "URL"</p>
+<table>
+<thead>
+<tr>
+<th>SingleRSSTorrent</th>
+<th>data type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Link</td>
+<td>string</td>
+<td>//Link field should contain the magnet link for the torrent</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>string</td>
+<td>//Title field also pulled from the RSS Feed</td>
+</tr>
+<tr>
+<td>PubDate</td>
+<td>string</td>
+<td>//Date the torrent was published to the feed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="settingsfile">settingsFile</h2>
+<p><strong>MessageType</strong>: "settingsFile"</p>
+<p><strong>Config</strong>: <em>FullClientSettings</em> //</p>
+<table>
+<thead>
+<tr>
+<th>FullClientSettings</th>
+<th>data type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>int</td>
+<td>//unique database ID</td>
+</tr>
+<tr>
+<td>LoggingLevel</td>
+<td>int</td>
+<td>//What logging level we are running at</td>
+</tr>
+<tr>
+<td>LoggingOutput</td>
+<td>string</td>
+<td>//Whether we are outputting to stdout or to a file</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>int</td>
+<td>//what version of the software we are running (currently not used)</td>
+</tr>
+<tr>
+<td>TFileUploadFolder</td>
+<td>string</td>
+<td>//Uploaded Torrent files from the client will be stored in this folder</td>
+</tr>
+<tr>
+<td>SeedRatioStop</td>
+<td>float64</td>
+<td>//At what ratio to automatically stop seeding a torrent</td>
+</tr>
+<tr>
+<td>DefaultMoveFolder</td>
+<td>string</td>
+<td>//Full path w</td>
+</tr>
+<tr>
+<td>TorrentWatchFolder</td>
+<td>string</td>
+<td>//Full path of the folder that is watched every 5 minutes for torrent files to add</td>
+</tr>
+<tr>
+<td>ClientConnectSettings</td>
+<td>struct</td>
+<td>//At what ratio to automatically stop seeding a torrent</td>
+</tr>
+</tbody>
+</table>
+<h2 id="clientconnectsettings">clientConnectSettings</h2>
+<p>Embedded Struct in settingsFile</p>
+<table>
+<thead>
+<tr>
+<th>clientConnectSettings</th>
+<th>data type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTPAddr</td>
+<td>string</td>
+<td>//HTTP Port with colon</td>
+</tr>
+<tr>
+<td>HTTPAddrIP</td>
+<td>string</td>
+<td>//HTTP IP address that the client connects at</td>
+</tr>
+<tr>
+<td>UseProxy</td>
+<td>bool</td>
+<td>//Whether or not we are using a reverse Proxy (like nginx or apache)</td>
+</tr>
+<tr>
+<td>WebsocketClientPort</td>
+<td>int</td>
+<td>//HTTPAddr with the colon stripped off</td>
+</tr>
+<tr>
+<td>BaseURL</td>
+<td>string</td>
+<td>//Full URL to the your goTorrent server (used with proxy) "derajnet.duckdns.org/gopher/"</td>
+</tr>
+<tr>
+<td>ClientUsername</td>
+<td>string</td>
+<td>//the username for the client login</td>
+</tr>
+<tr>
+<td>ClientPassword</td>
+<td>string</td>
+<td>//the SHA256 hash string of the password</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../clientToServer/" class="btn btn-neutral" title="Client to Server Messages"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../clientToServer/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Client to Server Messages - goTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Client to Server Messages";
+    var mkdocs_page_input_path = "API\\clientToServer.md";
+    var mkdocs_page_url = "/API/clientToServer/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> goTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Roadmap/">Roadmap</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../downloading/">Downloading</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Installing</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../Install/installing/">General Info</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Install/linuxInstall/">Linux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Install/otherInstall/">Other</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Install/reverseproxy/">Reverse Proxy</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../api/">General API Information</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Client to Server Messages</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#authrequest">authRequest</a></li>
+    
+
+    <li class="toctree-l3"><a href="#newauthtoken">newAuthToken</a></li>
+    
+
+    <li class="toctree-l3"><a href="#torrentlistrequest">torrentListRequest</a></li>
+    
+
+    <li class="toctree-l3"><a href="#torrentfilelistrequest">torrentFileListRequest</a></li>
+    
+
+    <li class="toctree-l3"><a href="#torrentpeerlistrequest">torrentPeerListRequest</a></li>
+    
+
+    <li class="toctree-l3"><a href="#fetchtorrentsbylabel">fetchTorrentsByLabel</a></li>
+    
+
+    <li class="toctree-l3"><a href="#changestoragevalue">changeStorageValue</a></li>
+    
+
+    <li class="toctree-l3"><a href="#magnetlinksubmit">magnetLinkSubmit</a></li>
+    
+
+    <li class="toctree-l3"><a href="#torrentfilesubmit">torrentFileSubmit</a></li>
+    
+
+    <li class="toctree-l3"><a href="#starttorrents">startTorrents</a></li>
+    
+
+    <li class="toctree-l3"><a href="#stoptorrents">stopTorrents</a></li>
+    
+
+    <li class="toctree-l3"><a href="#deletetorrents">deleteTorrents</a></li>
+    
+
+    <li class="toctree-l3"><a href="#forceuploadtorrents">forceUploadTorrents</a></li>
+    
+
+    <li class="toctree-l3"><a href="#setfilepriority">setFilePriority</a></li>
+    
+
+    <li class="toctree-l3"><a href="#settingsfilerequest">settingsFileRequest</a></li>
+    
+
+    <li class="toctree-l3"><a href="#rssfeedrequest">rssFeedRequest</a></li>
+    
+
+    <li class="toctree-l3"><a href="#addrssfeed">addRSSFeed</a></li>
+    
+
+    <li class="toctree-l3"><a href="#deleterssfeed">deleteRSSFeed</a></li>
+    
+
+    <li class="toctree-l3"><a href="#rsstorrentsrequest">rssTorrentsRequest</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../serverToClient/">Server to Client Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">goTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+    
+    <li>Client to Server Messages</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="authrequest">authRequest</h3>
+<pre><code>MessageType: "authRequest"
+Payload: {"ClientAuthString": ClientAuthString}
+</code></pre>
+<p><strong>Required Payload</strong>: "ClientAuthString" //Must be in this EXACT format</p>
+<p><strong>Expects</strong>: <em>String</em> containing a signed token from the server</p>
+<p><strong>Example Payload</strong>: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnROYW1lIjoiZ29Ub3JyZW50V2ViVUkiLC
+Jpc3MiOiJnb1RvcnJlbnRTZXJ2ZXIifQ.zvNAeunNp4DTICaY-SrbVRAoekLGkzQ51SfwkjhZnZY"</p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: Nothing, will now allow other commands if authentication succeeds.</p>
+<p><strong>Notes</strong>: The "authRequest" MUST be the first message sent to the server before it will accept any other messages</p>
+<h3 id="newauthtoken">newAuthToken</h3>
+<pre><code>MessageType: "newAuthToken"
+Payload: {"ClientName": ClientName}
+</code></pre>
+<p><strong>Required Payload</strong>: "ClientName" //Must be in this EXACT format</p>
+<p><strong>Expects</strong>: <em>String</em> containing a string with the client name (up to the user to define)</p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: <a href="../serverToClient/#tokenReturn">tokenReturn</a></p>
+<p><strong>Notes</strong>: </p>
+<h3 id="torrentlistrequest">torrentListRequest</h3>
+<p>Fetches all of the torrents currently stored in the client</p>
+<pre><code>MessageType: "torrentListRequest"
+</code></pre>
+<p><strong>Required Payload</strong>: NONE</p>
+<p><strong>Expects</strong>: Only a MessageType of "torrentListRequest", nothing else</p>
+<p><strong>Returns</strong>: <a href="../serverToClient/#torrentlist">torrentList</a></p>
+<h3 id="torrentfilelistrequest">torrentFileListRequest</h3>
+<p>Fetches a list of files for a single torrent</p>
+<pre><code>MessageType: "torrentFileListRequest",
+Payload: {"FileListHash": selectionHash}
+</code></pre>
+<p><strong>Required Payload</strong>: "FileListHash"</p>
+<p><strong>Expects</strong>: <em>string</em> The hash of the torrent file we are requesting the files for</p>
+<p><strong>Example</strong>: </p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: []torrentFileList //Array of torrent file structs  <a href="../serverToClient/#torrentfilelist">torrentFileList</a></p>
+<p><strong>Notes</strong>:</p>
+<h3 id="torrentpeerlistrequest">torrentPeerListRequest</h3>
+<p>Fetches a list of current peers for a single torrent</p>
+<pre><code>MessageType: "torrentPeerListRequest",
+Payload: {"PeerListHash": selectionHash}
+</code></pre>
+<p><strong>Required Payload</strong>: "PeerListHash" </p>
+<p><strong>Expects</strong>: <em>string</em> The hash of the torrent file we are requesting the peers for</p>
+<p><strong>Example</strong>: </p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: <a href="../serverToClient/#torrentpeerlist">torrentPeerList</a></p>
+<p><strong>Notes</strong>: This API call will most likely change heavily in the future!</p>
+<h3 id="fetchtorrentsbylabel">fetchTorrentsByLabel</h3>
+<p>Fetches a list of torrents by their label</p>
+<pre><code>MessageType: "torrentPeerListRequest",
+Payload: {"Label": searchLabel}
+</code></pre>
+<p><strong>Required Payload</strong>: "Label"</p>
+<p><strong>Expects</strong>: <em>string</em> The label string that you want to search for</p>
+<p><strong>Example</strong>: {"Label" : "RSS"} //Will search the database for torrents with RSS label</p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>:  <a href="../serverToClient/#torrentlist">torrentList</a>  //Filtered by label</p>
+<p><strong>Notes</strong>: API does not support an array of labels to search for</p>
+<h3 id="changestoragevalue">changeStorageValue</h3>
+<p>Changes where the finished torrent will be stored.</p>
+<pre><code>MessageType: "changeStorageValue",
+Payload: {"ChangeStorageHashes": [selectionHashes], "StorageValue": storageValue} //the selection hashes and new store value
+</code></pre>
+<p><strong>Required</strong>: "ChangeStorageHashes", "StorageValue"</p>
+<p><strong>Expects</strong>: </p>
+<p>"ChangeStorageHashes" -&gt; <em>[]string</em> //array of strings containing the hash values for the selected torrents</p>
+<p>"StorageValue" -&gt; <em>string</em> //the absolute or relative path to the new storage location (server will convert to absolute path on upload</p>
+<p><strong>Example</strong>: , "C:\Users\Test\Desktop"</p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: </p>
+<p><strong>Notes</strong>:</p>
+<h3 id="magnetlinksubmit">magnetLinkSubmit</h3>
+<p>Submits a magnet link (or links) to the server to add the torrent</p>
+<pre><code>MessageType: "magnetLinkSubmit",
+Payload: {"MagnetLinks": [magnetLinks], "StorageValue": storageValue, "Label": userLabel}
+</code></pre>
+<p><strong>Required</strong>: "MagnetLinks"</p>
+<p><strong>Expects</strong>: "MagnetLinks" -&gt; <em>[]string</em> // Expects an array of magnet links</p>
+<p><strong>Example</strong>: [magnet...] //magnet links must start with magnet</p>
+<p><strong>Optional Payload</strong>: "StorageValue" -&gt; <em>string</em> //absolute or relative path, will be converted to absolute path on server</p>
+<p>"Label" -&gt; <em>string</em> //String containing the requested label to be attached to the torrent</p>
+<p><strong>Returns</strong>: serverPushMessage</p>
+<p><strong>Notes</strong>: MUST be an array even for single magnetlink</p>
+<h3 id="torrentfilesubmit">torrentFileSubmit</h3>
+<p>Submits a torrent file to the server to add the torrent</p>
+<pre><code>MessageType: "torrentFileSubmit",
+Payload: {"FileData": base64data, "FileName": filename, "StorageValue": storageValue, "Label": userLabel}
+</code></pre>
+<p><strong>Required</strong>: "FileData", "FileName"</p>
+<p><strong>Expects</strong>: "FileData" -&gt; <em>Base64 encoded string</em> //The file must be converted a base64 encoded string and streamed to the server in this way.  PLEASE SEE NOTES</p>
+<p>"FileName" -&gt; <em>string</em> //Full name of the file INCLUDING the ".torrent" extension</p>
+<p><strong>Example</strong>: </p>
+<p><strong>Optional Payload</strong>: "StorageValue" -&gt; <em>string</em> //absolute or relative path, will be converted to absolute path on server</p>
+<p>"Label" -&gt; <em>string</em> //String containing the requested label to be attached to the torrent</p>
+<p><strong>Returns</strong>: serverPushMessage</p>
+<p><strong>Notes</strong>: The way Chrome and Firefox JS implementations encode base64 appears to be different... 
+if you are doing your base64 encoding I encourage it to be in this format: "base64," THEN your base64 data, since the server will split the response by the comma position and throw away the first part.  </p>
+<p>If the comma is not there the server will reject the submission.</p>
+<h3 id="starttorrents">startTorrents</h3>
+<p>Stops the selected torrents on the server</p>
+<pre><code>MessageType: "startTorrents",
+Payload: {"TorrentHashes": [selectionHashes] }
+</code></pre>
+<p><strong>Required</strong>: "TorrentHashes"</p>
+<p><strong>Expects</strong>: "TorrentHashes" -&gt; <em>[]string</em> //Array of torrent hashes </p>
+<p><strong>Example</strong>: </p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: serverPushMessage</p>
+<p><strong>Notes</strong>:</p>
+<h3 id="stoptorrents">stopTorrents</h3>
+<p>Stops the selected torrents on the server</p>
+<pre><code>MessageType: "stopTorrents",
+Payload: {"TorrentHashes": [selectionHashes] }
+</code></pre>
+<p><strong>Required</strong>: "TorrentHashes"</p>
+<p><strong>Expects</strong>: "TorrentHashes" -&gt; <em>[]string</em> //Array of torrent hashes </p>
+<p><strong>Example</strong>: </p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: serverPushMessage</p>
+<p><strong>Notes</strong>:</p>
+<h3 id="deletetorrents">deleteTorrents</h3>
+<p>Deletes the submitted torrents (and has the option to delete the downloaded data as well as the torrent)</p>
+<pre><code> MessageType: "deleteTorrents",
+ Payload: {"TorrentHashes": [selectionHashes], "WithData": withData }
+</code></pre>
+<p><strong>Required</strong>: "TorrentHashes", "WithData"</p>
+<p><strong>Expects</strong>: "TorrentHashes" -&gt; <em>[]string</em> //Array of torrent hashes</p>
+<p>"WithData" -&gt; <em>bool</em> // True to delete the downloaded data as well, false to just delete the torrent from the client</p>
+<p><strong>Example</strong>: </p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: serverPushMessage</p>
+<p><strong>Notes</strong>:</p>
+<h3 id="forceuploadtorrents">forceUploadTorrents</h3>
+<p>Stops the selected torrents on the server</p>
+<pre><code> MessageType: "forceUploadTorrents",
+ Payload: {"TorrentHashes": [selectionHashes] }
+</code></pre>
+<p><strong>Required</strong>: "TorrentHashes"</p>
+<p><strong>Expects</strong>: "TorrentHashes" -&gt; <em>[]string</em> //Array of torrent hashes </p>
+<p><strong>Example</strong>: </p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: serverPushMessage</p>
+<p><strong>Notes</strong>:</p>
+<h3 id="setfilepriority">setFilePriority</h3>
+<p>Sets the file priority for the selected files for the selected torrent</p>
+<pre><code>MessageType: "setFilePriority",
+Payload: {"TorrentHash": torrentHash, "FilePriority": filePriority, "FilePaths": [filePaths]}
+</code></pre>
+<p><strong>Required</strong>: "TorrentHash", "FilePriority", "FilePaths"</p>
+<p><strong>Expects</strong>: "TorrentHash" -&gt; <em>string</em> //String of a single torrent hash</p>
+<p>"FilePriority" -&gt; <em>string</em> "High"/"Normal"/"Cancel" //Tells the server what priority to set the selected files at</p>
+<p>"FilePaths" -&gt; <em>[]string</em> //Contains the relative filepath for the files that need a priority change (used to match the files on the server)</p>
+<p><strong>Example</strong>: </p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: serverPushMessage</p>
+<p><strong>Notes</strong>: "FilePaths" can be determined by querying the sever for torrentFileListRequest</p>
+<h3 id="settingsfilerequest">settingsFileRequest</h3>
+<p>Returns the settings for the server</p>
+<pre><code>MessageType: "settingsFileRequest",
+</code></pre>
+<p><strong>Required</strong>: None</p>
+<p><strong>Example</strong>: </p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: <a href="../serverToClient/#settingsFile">settingsFile</a></p>
+<p><strong>Notes</strong>:</p>
+<h3 id="rssfeedrequest">rssFeedRequest</h3>
+<p>Returns the total number of feeds and the URL's for your RSS feeds</p>
+<pre><code> MessageType: "rssFeedRequest",
+</code></pre>
+<p><strong>Required</strong>: Just the MessageType</p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: <a href="../serverToClient/#rsslist">rssList</a></p>
+<p><strong>Notes</strong>:</p>
+<h3 id="addrssfeed">addRSSFeed</h3>
+<p>Adds an RSS feed to the database</p>
+<pre><code>MessageType: "addRSSFeed",
+Payload: {"RSSURL": rssURL}
+</code></pre>
+<p><strong>Required</strong>: "RSSURL"</p>
+<p><strong>Expects</strong>: <em>string</em> //containing a full RSS URL</p>
+<p><strong>Example</strong>: Any URL that provides magnet links in the "Link" field will work</p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: serverPushMessage</p>
+<p><strong>Notes</strong>:</p>
+<h3 id="deleterssfeed">deleteRSSFeed</h3>
+<p>Deletes an RSS feed from the database</p>
+<pre><code>  MessageType: "deleteRSSFeed",
+  Payload: {"RSSURL": rssURL}
+</code></pre>
+<p><strong>Required</strong>: "RSSURL"</p>
+<p><strong>Expects</strong>: <em>string</em> //containing a full RSS URL</p>
+<p><strong>Example</strong>: Any RSS URL already in the database</p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: serverPushMessage</p>
+<p><strong>Notes</strong>:</p>
+<h3 id="rsstorrentsrequest">rssTorrentsRequest</h3>
+<p>Fetches all of the found magnet links in an RSS feed</p>
+<pre><code>  MessageType: "rssTorrentsRequest",
+  Payload: {"RSSURL": rssURL}
+</code></pre>
+<p><strong>Required</strong>: </p>
+<p><strong>Expects</strong>: <em>string</em> //containing a full RSS URL</p>
+<p><strong>Example</strong>: Any RSS URL that is already in the database</p>
+<p><strong>Optional Payload</strong>: NONE</p>
+<p><strong>Returns</strong>: <a href="../serverToClient/#rsstorrentlist">rssTorrentList</a></p>
+<p><strong>Notes</strong>: </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../serverToClient/" class="btn btn-neutral float-right" title="Server to Client Messages">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../api/" class="btn btn-neutral" title="General API Information"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../api/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../serverToClient/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

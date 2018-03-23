@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Roadmap - goTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Roadmap";
+    var mkdocs_page_input_path = "Roadmap.md";
+    var mkdocs_page_url = "/Roadmap/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> goTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Roadmap</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#early-mid-2018">Early-Mid 2018</a></li>
+    
+
+    <li class="toctree-l2"><a href="#late-2018">Late 2018</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../downloading/">Downloading</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Installing</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../Install/installing/">General Info</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Install/linuxInstall/">Linux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Install/otherInstall/">Other</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Install/reverseproxy/">Reverse Proxy</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../API/api/">General API Information</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../API/clientToServer/">Client to Server Messages</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../API/serverToClient/">Server to Client Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">goTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Roadmap</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="early-mid-2018">Early-Mid 2018</h3>
+<ul class="task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked> Ability to modify storage path of torrent after it has been added</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked> Backend to frontend notification messages</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked> Global Rate Limiting for Upload/Download Speed</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked> Add torrents from watch folder (cron job every 5 minutes)</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked> Authentication from client to server (done via JWT, will add functionality for 3rd party clients later)</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked> Reverse Proxy Support with SSL upgrade added (with provided config for nginx)</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked> Mostly generated client config from toml.config on first run</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked> Ability to view TOML settings from WebUI (and perhaps change a few as well)</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled checked> Stability/bug fixing/Optimization rewrite of some of the core structures of the WebUI and base server</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Unit testing completed for a large portion of the package</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Put the "Move torrent after download" into own goroutine with checks so the WebUI doesn't freeze when moving torrent</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Ability to set priority for individual files (just added to anacrolix/torrent so coming soon, already added to my UI)</p>
+</li>
+</ul>
+<h3 id="late-2018">Late 2018</h3>
+<ul class="task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Define the websocket API for users to write their own clients/extensions</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> React-native Android app (I don't own any Mac products so there will be no iPhone version)</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../downloading/" class="btn btn-neutral float-right" title="Downloading">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../downloading/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

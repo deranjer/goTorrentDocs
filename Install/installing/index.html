@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>General Info - goTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "General Info";
+    var mkdocs_page_input_path = "Install\\installing.md";
+    var mkdocs_page_url = "/Install/installing/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> goTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Roadmap/">Roadmap</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../downloading/">Downloading</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Installing</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">General Info</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#directions-video-for-linux">Directions Video for Linux</a></li>
+    
+
+    <li class="toctree-l3"><a href="#simplified-directions">Simplified Directions</a></li>
+    
+
+    <li class="toctree-l3"><a href="#linux-auto-start">Linux Auto-Start</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../linuxInstall/">Linux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../otherInstall/">Other</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reverseproxy/">Reverse Proxy</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../API/api/">General API Information</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../API/clientToServer/">Client to Server Messages</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../API/serverToClient/">Server to Client Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">goTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Installing &raquo;</li>
+        
+      
+    
+    <li>General Info</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="directions-video-for-linux">Directions Video for Linux</h3>
+<p>You can watch a YouTube video of me setting it up on Linux, the directions are fairly similar for other OS's</p>
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&v=G0gO_cm_Oks
+" target="_blank"><img src="http://img.youtube.com/vi/G0gO_cm_Oks/0.jpg" 
+alt="goTorrent Alpha Setup Video" width="240" height="180" border="10" /></a></p>
+<h3 id="simplified-directions">Simplified Directions</h3>
+<ul>
+<li>Extract the download file</li>
+<li>Enter your settings into the config.toml file</li>
+<li>If needed modify the <code>public/static/js/kickwebsocket-generated.js</code> file to connect the frontend to the backend (not needed if using reverse proxy)</li>
+<li>Make goTorrent binary file executable (linux only)</li>
+<li>Run the goTorrent binary, connect via a web browser</li>
+</ul>
+<h3 id="linux-auto-start">Linux Auto-Start</h3>
+<ul>
+<li>chown the directory goTorrent is in to a new user called "goTorrent"</li>
+<li>copy the systemd startup file from <code>dist-specific-files\Linux-systemd\goTorrent.service</code> to your systemd directory for services </li>
+<li>enable the service, then start the service.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../linuxInstall/" class="btn btn-neutral float-right" title="Linux">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../downloading/" class="btn btn-neutral" title="Downloading"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../downloading/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../linuxInstall/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>
